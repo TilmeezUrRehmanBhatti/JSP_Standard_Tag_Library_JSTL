@@ -150,13 +150,12 @@ It's simply a unique identifier that associates your tag in the jar file.
 </html>
 ```
 
-**Question:  
-**
+**Question:**
 
 Is it possible to read cookie without scriptlet but using JSTL code?
 
-**Answer:  
-**Yes. The standard syntax to access HTTP Cookie value in JSP is:
+**Answer:**   
+Yes. The standard syntax to access HTTP Cookie value in JSP is:
 
 ```JSP
 ${cookie.<cookie name>.value}
