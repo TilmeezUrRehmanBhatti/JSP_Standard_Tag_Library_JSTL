@@ -26,7 +26,15 @@
             <tr>
                 <td>${tempStudent.firstName}</td>
                 <td>${tempStudent.lastName}</td>
-                <td>${tempStudent.goldCustomer}</td>
+                <td>
+                        <c:if test="${tempStudent.goldCustomer}">
+                            Special Discount
+                        </c:if>
+
+                        <c:if test="${not tempStudent.goldCustomer}">
+                            -
+                        </c:if>
+                </td>
             </tr>
         </c:forEach>
 
