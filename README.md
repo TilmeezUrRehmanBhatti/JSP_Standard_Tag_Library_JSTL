@@ -108,7 +108,7 @@ It's simply a unique identifier that associates your tag in the jar file.
 
 **Example with forEach - Build HTML Tables**
 
-<img src="img_3.png" width="500"/>  
+<img src="https://user-images.githubusercontent.com/80107049/182731397-83eb4206-4462-4732-b968-6bad9d347bfc.png" width="500"/>  
 
 
 ```JSP
