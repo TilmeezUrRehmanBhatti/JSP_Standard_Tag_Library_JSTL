@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="tagdemo:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>tagdemo</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="tagdemo-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="tagdemo:war exploded" />
+    </root>
+  </artifact>
+</component>
