@@ -403,3 +403,149 @@ Result of joining: ${fun}
 ```
 
 <img src="imagesReadme/img_13.png" width = 300 />
+
+# Build a Multi-Lingual App with JSTL - I18N tags
+
+## Multi-Lingual/Internationalization Overview
+
+**What is I18N?**
++ The term _Internationalization_ is frequently abbreviated as _I18N_
+  + There are l8 letters betwwen the first "i" and the last "n" .
+
+**Formatting Messages**
++ Instead of hard-coding display text/messages in your application
++ Make use of labels / the placeholders will use message of current locale
++ Locale = language + region
+  + en_US = English (US)
+  + en_GB = English (UK)
+  + ...others...
+
+<img src="imagesReadme/img_18.png" width=700 />
+
++ You need to create translated versions of each label (no magic here)
++ Based on user's language selection, system will include appropriate text
+
+**Formatting Dates, Number and Currency**
+
+| **Locale**     | **Short Date** | **Long Date**     | **Number** | **Currency** |
+| -------------- | -------------- | ----------------- | ---------- | ------------ |
+| English, US    | 05/06/02       | May 6,2002        | 1,234.56   | $ 1,234.56   |
+| English, UK    | 06/05/02       | 06 May 2002       | 1.234,56   | £ 1.234,56   |
+| French, France | 06/05/02       | 6 mai 2022        | 1 234,6    | 1 234,56 €   |
+| Japanese       | 02/05/06       | 2002 年 5 月 6 日 | 1,234.56   | ¥ 1,234.56   |
+
+**JSTL Functions**
+
+<html>
+<head>
+<style>
+table {
+    border-collapse: collapse;
+}
+
+table, td, th {
+border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+	<table>
+		<tr>
+			<th>Area</th>
+			<th>Function</th>
+			<th>Tags</th>
+			<th>Prefix</th>
+		</tr>
+		<tr>
+			<td rowspan="3" >I18N</td>
+			<td>Setting Locale</td>
+			<td>SetLocale <br/>request Encoding</td>
+      <td rowspan="3">fmt</td>
+		</tr>
+		<tr>
+			<td>Messaging</td>
+			<td>bundle<br/>message<br/>param<br/>set bundle</td>
+		</tr>
+    <tr>
+      <td>Number and Date <br/>Formatting</td>
+     <td>formatNumber<br/>
+       formatDate<br/>
+       parseDate<br/>
+       parseNumber<br/>
+       setTimeZone<br/>
+       timeZone </td>
+	</table>
+
+</body>
+</html>
+
+**Multi-Lingual Application**
+
+![](imagesReadme/img_19.png)
+
+**Formatting Messages**
+
+<img src="imagesReadme/img_20.png" width=500/>
+
+**What is a Locale?**  
+`Locale = Language Code + Country Code`
++ There are difference for a language depending on the country
++ For example
+  + English (US)
+  + English (GB)
+
+
+**To Do List**
+
++ Step 1 : Create Resource Files
+  + Translated version of your labels
++ Step 2: Create JSP Page with labels
++ Step 3: Update JSP page to change locale based on user selection
+
+**Step 1: Create Resource Files**
++ Translated versions of your labels
+  + You will need to use Google Translator or similar translator
++ Must name the file using the locale
++ File name must follow specific formate 
+  + **`<your project file name>_LANGAUGECODECOUNTRYCODE.properties`**
++ Example
+  + mylables_es_ES.properties
+  + mylables_de_DE.properties
+  + mylables_en_GN.properties
++ Language Codes based on ISO Standard 639-1 (2 letter code)
+  + https://en.wikipedia.org/wike/ISO_639-1
++ Country Codes based on ISO Standard 3166-2 (2 letter code)
+  + https://en.wikipedia.org/wike/ISO_3166-2
++ Here's an example for the locale: **German - Germany**
+
+**File: mylabels_de_DE.properties**
+```Properties
+label.greeting=Hallo
+label.firstname=Vorname
+label.lastname=Nachname
+label.welcome=Willkomen in der Ausbildung Klasse.
+```
+
+**Step 2: Create JSP page with labels**
+
+**File:i18n-messages-test.jsp**
+
+
+![](imagesReadme/img_21.png)
+
+**Step 3: Update JSP page to change locale based on user selection**
++ Our JSP page will send links to itself
++ Will pass the locale as a parameter
++ 
+<img src="imagesReadme/img_22.png" width=500 />
+
+```JSP
+<a href="i18n-messages-test.jsp?theLocale=en_US">English (US)</a>
+|
+<a href="i18n-messages-test.jsp?theLocale=es_ES">Spanish (ES)</a>
+|
+<a href="i18n-messages-test.jsp?theLocale=de_DE">German (DE)</a>
+```
+
+![](imagesReadme/img_23.png)
