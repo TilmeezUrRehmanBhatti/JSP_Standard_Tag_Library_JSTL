@@ -245,7 +245,8 @@ The `<c:if>` tag evaluates an expression and displays its body content only if t
 The `<c:choose>`tag is similar to a switch statement.
 
 **Code Example**  
-<img src="inkdrop://file:6Y_eL95u8" width=500/>
+<img src="img_12.png" width=500/>
+
  ```JSP 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -298,3 +299,107 @@ The `<c:choose>`tag is similar to a switch statement.
 ```
 <img src="img.png" width = 200/>
 
+## JSP Standard Tag Library(JSTL)-Function Tags
+
+
+**JSTL Functions - Prefix "fn"**
+
++ **Collection Length**
+  + Length
++ **String manipulation**
+  + toUpperCase, toLowerCase
+  + substring, substringAfter, substringBefore
+  + trim, replace, indexOf, startsWith, endsWith
+  + contains, containsIgnoreCase, split, join ,excapeXml
+
+**JSTL Functions Reference**
++ Every page uses the Function tags must include this reference:
+
+![img_17.png](img_17.png)
+**Code Example**
+
+```JSP
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<html>
+
+<body>
+
+<c:set var="data" value="tilmeez" />
+
+Length of the string <b>${data}</b>: ${fn:length(data)}
+
+<br/><br/>
+
+Uppercase version of the string <b>${data}</b>: ${fn:toUpperCase(data)}
+
+<br/><br/>
+
+Does the string <b> start with </b> <b>t</b>?: ${fn:startsWith(data, "t")}
+</body>
+
+</html>
+```
+
+
+<img src="img_16.png" width = 300 />   
+
+
+
+
+
+**JSTL Split Function**
+
+The `fn:split()` function splits a String into an array of substrings based on delimiter.
+
+```JSP
+  String[] split(String data, String delimiter)
+```
+
+**Code Example**   
+<img src="img_15.png" width = 600 />
+
+
+
+
+**JSTL Join Function**
+
+The `fn:join()` function concatenates a String array into single String based on a delimiter.
+
+```JSP
+  String join(String[] data, String delimiter)
+```
+
+**Code Example**  
+
+<img src="img_14.png" width=600 />
+
+```JSP 
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<body>
+
+<c:set var="data" value="Singapore, Karachi, London, Dusseldorf"/>
+
+<h3>Split Demo</h3>
+
+<c:set var="citiesArray" value="${fn:split(data, ',')}"/>
+
+<c:forEach var="tempCity" items="${citiesArray}">
+    ${tempCity} <br/>
+</c:forEach>
+
+<h3>Join Demo</h3>
+
+<c:set var="fun" value="${fn:join(citiesArray, '*')}"/>
+
+Result of joining: ${fun}
+</body>
+</html>
+```
+
+<img src="img_13.png" width = 300 />
