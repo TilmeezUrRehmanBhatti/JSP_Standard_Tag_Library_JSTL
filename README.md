@@ -2,7 +2,7 @@
 ## JSP Tags Overview
 
 There are two categories of JSP tags.  
-<img src="img_11.png" alt="drawing" width="500"/>
+<img src="imagesReadme/img_11.png" alt="drawing" width="500"/>
 **JSP Custom Tags** : Where we can write your own code and implement that code and use it as a tag .
 
 **JSP Standard Tag Library (JSTL)** : Created by Oracle, common set of tags that can be used in JSP environment.
@@ -10,7 +10,7 @@ There are two categories of JSP tags.
 **Problem**
 + Email from: The Boss
 
-<img src="img_10.png" width="500" />  
+<img src="imagesReadme/img_10.png" width="500" />  
 
 **Option 1 : Use Scriptlets**
 ```JSP
@@ -35,11 +35,11 @@ There are two categories of JSP tags.
 + Move heavy business logic into supporting class
 + Insert JSP custom tag to use supporting class
 
-<img src="img_9.png" width="500"/>
+<img src="imagesReadme/img_9.png" width="500"/>
 
 As an example we can drop custom tag called weather report and add real heavy lifting is implement by a supporting by back-end java class   
-<img src="img_7.png" width="200"/>
-<img src="img_8.png" width="200"/>
+<img src="imagesReadme/img_7.png" width="200"/>
+<img src="imagesReadme/img_8.png" width="200"/>
 **Benefits of JSP Custom Tags**
 + Minimize the amount of scriptlet code in a JSP
 + Avoids dumping thousands of line of code in a JSP
@@ -88,14 +88,14 @@ _SQL:_ For accessing a database.
 
 **JSP Core Taglib Reference**
 + Every page that uses the Core tags must include this reference:
-  ![img_6.png](img_6.png)
+  ![img_6.png](imagesReadme/img_6.png)
 
 It's simply a unique identifier that associates your tag in the jar file.
 
 #### foreach Tag
 
 **Example: Looping with `forEach` Tag**   
-![img_5.png](img_5.png)
+![img_5.png](imagesReadme/img_5.png)
 + At the top we have sample data, this is a part of a scriptlet
 > Use JSTL to minimize scriptlets here just to load some sample data.
 > > In the real world this will be provided by MVC system.
@@ -104,7 +104,7 @@ It's simply a unique identifier that associates your tag in the jar file.
     + Here `pageContext.setAttribute(name , value)` reference to the object value is String[] cities.
 
   
-![img_4.png](img_4.png)
+![img_4.png](imagesReadme/img_4.png)
 
 **Example with forEach - Build HTML Tables**
 
@@ -187,7 +187,7 @@ The `<c:if>` tag evaluates an expression and displays its body content only if t
 
 **Code Example**
 * Display **Special Discount** if student is a gold customer  
-  <img src="img_2.png" width="500"/>
+  <img src="imagesReadme/img_2.png" width="500"/>
 ```JSP
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -236,7 +236,7 @@ The `<c:if>` tag evaluates an expression and displays its body content only if t
 ```
 
 
-<img src="img_1.png" width="300"/>
+<img src="imagesReadme/imagesReadme/img_1.png" width="300"/>
 
 #### Choose tag
 
@@ -297,7 +297,7 @@ The `<c:choose>`tag is similar to a switch statement.
 </body>
 </html>
 ```
-<img src="img.png" width = 200/>
+<img src="imagesReadme/img.png" width = 200/>
 
 ## JSP Standard Tag Library(JSTL)-Function Tags
 
@@ -344,7 +344,7 @@ Does the string <b> start with </b> <b>t</b>?: ${fn:startsWith(data, "t")}
 ```
 
 
-<img src="img_16.png" width = 300 />   
+<img src="imagesReadme/img_16.png" width = 300 />   
 
 
 
@@ -359,7 +359,7 @@ The `fn:split()` function splits a String into an array of substrings based on d
 ```
 
 **Code Example**   
-<img src="img_15.png" width = 600 />
+<img src="imagesReadme/img_15.png" width = 600 />
 
 
 
@@ -374,7 +374,7 @@ The `fn:join()` function concatenates a String array into single String based on
 
 **Code Example**  
 
-<img src="img_14.png" width=600 />
+<img src="imagesReadme/img_14.png" width=600 />
 
 ```JSP 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -402,4 +402,4 @@ Result of joining: ${fun}
 </html>
 ```
 
-<img src="img_13.png" width = 300 />
+<img src="imagesReadme/img_13.png" width = 300 />
