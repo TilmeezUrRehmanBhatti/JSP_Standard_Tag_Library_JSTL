@@ -315,7 +315,7 @@ The `<c:choose>`tag is similar to a switch statement.
 **JSTL Functions Reference**
 + Every page uses the Function tags must include this reference:
 
-![img_17.png](img_17.png)
+![img_17.png](imagesReadme/img_17.png)
 **Code Example**
 
 ```JSP
